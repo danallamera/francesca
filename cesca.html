@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GlamGram</title>
+    <style>
+        /* CSS for the body to set the background image */
+        body {
+            background-image: url("https://i.pinimg.com/564x/8c/57/9c/8c579cf7bbec37d8ea0d220714dc2bf7.jpg");
+            /* Specify the path to your background image */
+            background-size: cover;
+            /* Cover the entire background */
+            background-repeat: no-repeat;
+            /* Prevent background image from repeating */
+            background-attachment: fixed;
+            /* Fixed background position */
+            /* You can also add more background properties like position, etc. */
+        }
+
+        /* Additional styles for content */
+        .content {
+            padding: 20px;
+            /* Add padding to keep content away from edges */
+            color: #ffffff;
+            /* Set text color to white for better contrast on background */
+        }
+    </style>
+    <!-- Importing the Adorn font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Adorn:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Apply box-sizing border-box to all elements */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Styling for the entire body */
+        body {
+            background-color: #f5f0e1;
+            /* Light beige background color */
+            font-family: 'Constantia', sans-serif;
+            /* Constantia */
+            color: #4a2f2a;
+            /* Dark brown text color */
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Styling for the container */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff7ec;
+            /* Very light brown background */
+            border: 1px solid #d5a083;
+            /* Medium brown border */
+            border-radius: 5px;
+        }
+
+        /* Styling for the header */
+        header {
+            background-image: url("https://i.pinimg.com/564x/33/64/7c/33647cac9b1af3206d98bd48eb5ce347.jpg");
+            /* Background image */
+            background-size: cover;
+            /* Cover the entire area with the image */
+            height: 67px;
+            /* Adjust height as needed */
+            position: relative;
+            /* Position for absolute child elements */
+            text-align: center;
+            /* Center text */
+            color: rgb(151, 83, 55);
+            /* White text color for better contrast */
+        }
+
+        /* Styling for the GlamGram title */
+        .header-title {
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            /* Adjust font size as needed */
+            font-weight: bold;
+            font-family: "Gigi", cursive; /* Apply French Script MT font */
+        }
+
+        /* Styling for user profile section */
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        /* Styling for user avatar */
+        .avatar {
+            border-radius: 50%;
+            /* Circular shape */
+            width: 80px;
+            /* Width of avatar */
+            height: 80px;
+            /* Height of avatar */
+            margin-right: 20px;
+            /* Margin between avatar and username */
+            border: 2px solid #d5a083;
+            /* Medium brown border */
+        }
+
+        /* Styling for user info */
+        .user-info {
+            font-size: 16px;
+            line-height: 1;
+            /* Adjusted line height to remove space between lines */
+        }
+
+        /* Styling for user counts */
+        .user-counts {
+            display: flex;
+            gap: 10px;
+            /* Space between each count */
+            margin-top: 5px;
+            /* Space between user info and counts */
+        }
+
+        /* Styling for the grid container */
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+            /* Stacking the rows vertically */
+            gap: 20px;
+            /* Space between the rows */
+            width: 100%;
+            /* Ensure full width */
+        }
+
+        /* Styling for each row of grid items */
+        .grid-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columns */
+            gap: 10px;
+            /* Space between grid items */
+        }
+
+        /* Styling for grid items */
+        .grid-item {
+            border: 1px solid #d5a083;
+            /* Medium brown border */
+            border-radius: 10px;
+            /* Rounded corners */
+            overflow: hidden;
+            background-color: #fff7ec;
+            /* Very light brown background */
+        }
+
+        /* Styling for grid item images */
+        .grid-item img {
+            width: 100%;
+            /* Make the image span the full width of the grid item */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        /* Styling for grid item captions */
+        .grid-item p {
+            font-size: 14px;
+            color: #4a2f2a;
+            /* Dark brown text color */
+            text-align: center;
+            /* Center the caption text */
+            margin-top: 5px;
+            /* Add some space between the image and the caption */
+        }
+
+        /* Styling for the social media section */
+        .social-media {
+            display: flex;
+            justify-content: center;
+            /* Center the social media icons */
+            gap: 20px;
+            /* Space between icons */
+            margin-top: 20px;
+            /* Margin on top of social media section */
+        }
+
+        /* Styling for social media icons */
+        .social-media img {
+            width: 40px;
+            /* Width of each social media icon */
+            height: 40px;
+            /* Height of each social media icon */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-title">GlamGram</div>
+        </header>
+
+        <!-- User Profile Section -->
+        <div class="user-profile">
+            <!-- User Avatar -->
+            <img src="https://scontent-mnl1-1.xx.fbcdn.net/v/t39.30808-6/422899740_2074075582943582_5366929095965026791_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGKoqq8qT52W24Qb-9BTcYf0PKW7hQB2nXQ8pbuFAHadUvQh5gzZJuRFrtqEFNGeUbH39egW4ymg1gUjBp9iau2&_nc_ohc=bwSz9-8cdQ0Ab7lE8gh&_nc_ht=scontent-mnl1-1.xx&oh=00_AfDuHZItnrLMxzC8v9hETMx1XBoXiRbuvgHVy9MyGJaVHg&oe=661F134A" alt="User Avatar" class="avatar">
+            <!-- User Info -->
+            <div class="user-info">
+                <h2>Frances Dana Llamera</h2>
+                <p><strong>@danariousity</strong></p>
+                <!-- Information -->
+                <div class="information"></div>
+                <p>She is a dancer, a daughter, a survivor and a dreamer.</p>
+                <p>Peace, beauty, kindness, and coffee.</p>
+                <p></p>
+
+                <p><strong> ⚲:</strong> Koronadal City, South Cotabato</p>
+                <p><strong>🎈:</strong> April 16, 2004</p>
+                <p><strong>she/her</strong></p>
+                <!-- User Counts -->
+                <div class="user-counts">
+                    <p><strong>Posts:</strong> 9</p>
+                    <p><strong>Followers:</strong> 984</p>
+                    <p><strong>Following:</strong> 200</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="grid-container">
+            <!-- First Row of Grid Items -->
+            <div class="grid-row">
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCfWRaEAAo900?format=jpg&name=large" alt="Post 1">
+                    <p>Play the instruments, chant the rituals. Above all else, cultural dance is my first love.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnC4h9bEAE3SOP?format=jpg&name=large" alt="Post 2">
+                    <p>Too much caffeine? There's no such thing. I always get my daily dose of coffee whenever I get the chance to do so. Actually, my zodiac sign is prolly a coffee bean.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCahIaEAAnDC1?format=jpg&name=large" alt="Post 3">
+                    <p>My love for folk dance is immeasurable. I feel like I am floating in the air every time I dance. They say that one needs a pair of wings to fly. But for me? A pair of dancing shoes is enough; or even barefoot!</p>
+                </div>
+            </div>
+
+            <!-- Second Row of Grid Items -->
+            <div class="grid-row">
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCyVKa4AItUyv?format=jpg&name=large" alt="Post 4">
+                    <p>No matter when, no matter how, may we never lose the drive to do the things we are passionate about. And just like what my desktop background says, 'If you're too lazy to do something, it's a disrespect to those individuals who believe in you.'</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCc-SboAA9BW3?format=jpg&name=large" alt="Post 5">
+                    <p>"ANIMO LA SALLE, ANIMO ICALLE!"</p>
+
+                    <p>For the love of linguistics, language, and research, pens up!</p>
+                        
+                    <p>With utmost gratitude and a heart full of honor and pride, it is a great privilege to have the opportunity to present our research papers at the 4th International Conference on Applied Linguistics and Language Education at De La Salle University-Manila. To be in the midst of such brilliant minds and the biggest names in the field of research and linguistics while wearing this Tboli attire is more than I could ask for.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCuCUbUAAo2g8?format=jpg&name=medium" alt="Post 6">
+                    <p>I was riding shotgun with my hair undone and slightly bathed with blood.</p>
+                    <p>I remember clearly how I got the only scar I have on my head right now. It was 2011, I was only 7 years old when my cousin threw a billiard ball at me because I changed the boxing live video on the karaoke machine to the live video of Taylor Swift's 'Our Song' MTV. My uncle saw me crying with blood running down my forehead, so he quickly ran to get his car, put me in the shotgun seat, and we drove to the health center. And that is the (slightly dark) story of how much I love Taylor Swift, even up to this day.</p>
+                </div>
+            </div> 
+
+            <!-- Third Row of Grid Items -->
+            <div class="grid-row">
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCO91bMAA8lzp?format=jpg&name=large" alt="Post 4">
+                    <p>Ms. Fitness 2018 1st Runner-Up</p>
+                    <p>Miss Fitness 2019</p>
+                    <p>Lakambini ng Saravia 2019</p>
+                    <p>Lakambini ng Wika 2019</p>
+                    <p>Miss CYM 2022</p>
+
+                    <p>Being a beauty queen is not about having the crown on your head, but wearing it over your heart. I have already left the path of pageantry, but I believe that I have served my purpose during that journey and that purpose is to show courage that age is not an excuse to do great things because as long as you want, then you can.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCXCVbAAATanr?format=jpg&name=medium" alt="Post 5">
+                    <p>"Here's where she meets Prince Charming, but she won't discover that it's him 'til chapter three!" -Belle</p>
+                    <p>This is Belle, my favorite Disney princess. What some of my friends don't know is that I am a huge fan of DISNEY. Name a Disney movie, and I'll recite some of the characters' lines and sing (I'm not a singer) their songs!</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://pbs.twimg.com/media/GLnCUg3aMAARWni?format=jpg&name=large" alt="Post 6">
+                    <p>"A dream is a wish your heart makes" -Cinderella</p>
+                    <p>And because my family knows how much a Disney fan I am, they gave me the 'debut' of my dreams. My theme is none other than 'Beauty and the Beast' and of course, I dressed up as Belle!</p>
+    </div>
+</div> 
+
+ <!-- Fourth Row of Grid Items -->
+ <div class="grid-row">
+    <div class="grid-item">
+        <img src="https://pbs.twimg.com/media/GLnCq8nakAAOHSc?format=png&name=900x900" alt="Post 4">
+        <p>"She said, 'She's a survivor, that one.' She is," says Peeta.</p>
+        <p>And if one might ask what my favorite book is, I would gladly hold up three fingers just like Katniss Everdeen did and say it's 'The Hunger Games'.</p>
+
+    </div>
+    <div class="grid-item">
+        <img src="https://pbs.twimg.com/media/GLnGlUTbUAAduoL?format=jpg&name=large" alt="Post 5">
+        <p>My everything in one picture. Where my heart belongs...</p>
+    </div>
+    <div class="grid-item">
+        <img src="https://pbs.twimg.com/media/GLnCn0NaEAARgWQ?format=jpg&name=large" alt="Post 6">
+        <p>My baby Saoirse just dropped by to say hi!</p>
+</div>
+</div> 
+</div>
+<style>
+    /* CSS for centering the paragraph */
+    .centered-paragraph {
+        text-align: center;
+    }
+</style>
+<body>
+</div>
+</div>
+    <div class="centered-paragraph">
+        <p></p>
+        <p></p>
+        <b>Ready for more? Click the logos below to explore my life better.</b>
+    </div>
+</body>
+        <!-- Social Media Section -->
+        <div class="social-media">
+            <!-- Instagram Link -->
+            <a href="https://www.facebook.com/danallamera/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/640px-2021_Facebook_icon.svg.png" alt="Instagram">
+            </a>
+            <!-- Twitter Link -->
+            <a href="https://twitter.com/danariousity" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter">
+            </a>
+            <!-- Facebook Link -->
+            <a href="https://www.instagram.com/danallamera/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Facebook">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
